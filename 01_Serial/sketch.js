@@ -8,7 +8,10 @@ function receiveSerial() {
   let line = mSerial.readUntil("\n");
   print(line);
 
+  let sensorVal = int(line);
+
   // TODO: assign to color
+  cBackgroundColor = map(sensorVal, 0, 4095, 0, 255);
 }
 
 function connectToSerial() {
